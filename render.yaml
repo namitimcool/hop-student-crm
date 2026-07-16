@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------------------
+# render.yaml — Render Blueprint for the HOP Recruitment CRM backend.
+# In the Render dashboard: New > Blueprint > point at this repo.
+# Fill in the FIREBASE_*, GOOGLE_*, and OCR_API_KEY secret values in the
+# Render dashboard after the service is created (do not commit them). No
+# paid AI API key is used anywhere in this project.
+# ---------------------------------------------------------------------------
+services:
+  - type: web
+    name: hop-recruitment-crm-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: CLIENT_ORIGIN
+        sync: false # set to your Cloudflare Pages URL(s), comma-separated
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: FIREBASE_CLIENT_EMAIL
+        sync: false
+      - key: FIREBASE_PRIVATE_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REFRESH_TOKEN
+        sync: false
+      - key: GOOGLE_DRIVE_FOLDER_ID
+        sync: false
+      - key: OCR_API_KEY
+        sync: false
+      - key: OCR_API_URL
+        value: https://api.ocr.space/parse/image

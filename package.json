@@ -1,0 +1,17 @@
+{
+  "name": "hop-recruitment-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HOP Recruitment CRM by House of Projects \u2014 Firebase-powered ATS for candidate sourcing, company management, sharing, and payment tracking.",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "postinstall": "npm run install:all",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently -n SERVER,CLIENT -c blue,green \"npm:server\" \"npm:client\"",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

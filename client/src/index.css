@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background: linear-gradient(180deg, #f7f9fc 0%, #eef1f6 100%);
+  color: #0a1120;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #adb9d1; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-card border border-slate-100;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-700 text-white font-medium px-4 py-2.5 rounded-xl transition-colors shadow-sm;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-navy-800 font-medium px-4 py-2.5 rounded-xl transition-colors border border-slate-200;
+}
+
+.btn-emerald {
+  @apply inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2.5 rounded-xl transition-colors shadow-sm;
+}
+
+.input {
+  @apply w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent transition;
+}
+
+.label {
+  @apply block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wide;
+}
+
+.badge {
+  @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold;
+}
